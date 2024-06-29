@@ -12,12 +12,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mercuryworkshop/bare-mux": "^1.1.1",
+    "@mercuryworkshop/epoxy-transport": "^2.0.1",
     "@million/lint": "^1.0.0-rc.76",
+    "@titaniumnetwork-dev/ultraviolet": "^3.1.2",
     "cmdk": "^1.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.2.1",
-    "vite-plugin-minify": "^1.5.2"
+    "vite-plugin-minify": "^1.5.2",
+    "vite-plugin-static-copy": "^1.0.5",
+    "wisp-server-node": "^1.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

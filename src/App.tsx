@@ -1,4 +1,7 @@
+import { registerSW } from "./util/registerSW"
 import { CommandMenu } from "./components/CommandMenu"
+
+await registerSW();
 
 function App() {
   return (
