@@ -17,6 +17,7 @@
     "@million/lint": "^1.0.0-rc.76",
     "@titaniumnetwork-dev/ultraviolet": "^3.1.2",
     "cmdk": "^1.0.0",
+    "rammerhead": "https://github.com/holy-unblocker/rammerhead/releases/download/v1.2.41-holy.5/rammerhead-1.2.41-holy.5.tgz",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.2.1",
