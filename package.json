@@ -16,7 +16,8 @@
     "cmdk": "^1.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-icons": "^5.2.1"
+    "react-icons": "^5.2.1",
+    "vite-plugin-minify": "^1.5.2"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
