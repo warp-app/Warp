@@ -131,3 +131,29 @@ million-dev-toolbar {
     width: 20px;
     height: 20px;
 }
+
+[cmdk-input-wrapper] {
+    display: flex;
+}
+
+[cmdk-input-wrapper][data-back="false"] [cmdk-back] {
+    display: none;
+}
+
+[cmdk-input-wrapper][data-back="true"] [cmdk-back] {
+    width: 3.1875rem;
+    height: 3.1875rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+[cmdk-back] svg {
+    height: 20px;
+    width: 20px;
+}
+
+[cmdk-input-wrapper][data-back="true"] [cmdk-input] {
+    padding-left: 0;
+}
