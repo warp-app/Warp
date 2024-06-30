@@ -36,7 +36,7 @@ const CommandMenu = () => {
                 <div cmdk-back="" onClick={menuBack}>
                     <MdChevronLeft />
                 </div>
-                <Command.Input autoFocus placeholder="Search or Enter URL..." onValueChange={showMenu} onClick={showMenu} />
+                <Command.Input autoFocus placeholder="Search or Enter URL" onValueChange={showMenu} onClick={showMenu} />
             </div>
             <Command.List>
                 <Command.Empty>No results found.</Command.Empty>
