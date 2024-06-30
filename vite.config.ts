@@ -1,5 +1,5 @@
 import { defineConfig, ViteDevServer } from 'vite';
-import react from '@vitejs/plugin-react';
+import { svelte } from '@sveltejs/vite-plugin-svelte';
 import { ViteMinifyPlugin } from 'vite-plugin-minify';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 import { uvPath } from '@titaniumnetwork-dev/ultraviolet';
@@ -14,7 +14,7 @@ import createRammerhead from 'rammerhead/src/server/index.js';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    react(),
+    svelte(),
     ViteMinifyPlugin(),
     {
       name: "server",
