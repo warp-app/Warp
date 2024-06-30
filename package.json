@@ -14,7 +14,6 @@
   "dependencies": {
     "@mercuryworkshop/bare-mux": "^1.1.1",
     "@mercuryworkshop/epoxy-transport": "^2.0.1",
-    "@million/lint": "^1.0.0-rc.76",
     "@titaniumnetwork-dev/ultraviolet": "^3.1.2",
     "cmdk": "^1.0.0",
     "rammerhead": "https://github.com/holy-unblocker/rammerhead/releases/download/v1.2.41-holy.5/rammerhead-1.2.41-holy.5.tgz",

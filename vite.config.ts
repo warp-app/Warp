@@ -1,4 +1,3 @@
-import MillionLint from '@million/lint';
 import { defineConfig, ViteDevServer } from 'vite';
 import react from '@vitejs/plugin-react';
 import { ViteMinifyPlugin } from 'vite-plugin-minify';
@@ -16,7 +15,6 @@ import createRammerhead from 'rammerhead/src/server/index.js';
 export default defineConfig({
   plugins: [
     react(),
-    MillionLint.vite(),
     ViteMinifyPlugin(),
     {
       name: "server",
