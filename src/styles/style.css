@@ -139,7 +139,7 @@ million-dev-toolbar {
     margin-top: 8px;
 }
 
-[cmdk-item] svg {
+[cmdk-item] svg, [cmdk-item] img {
     width: 20px;
     height: 20px;
 }

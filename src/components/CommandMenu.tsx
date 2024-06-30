@@ -5,6 +5,8 @@ import { IoMdOpen } from "react-icons/io";
 import { IoMdGlobe } from "react-icons/io";
 import { IoMdSettings } from "react-icons/io";
 import { MdChevronLeft } from "react-icons/md";
+import ultravioletLogo from "../assets/ultravioletLogo.png";
+import rammerheadLogo from "../assets/rammerheadLogo.png";
 
 function showMenu() {
     let cmdkList = document.querySelector("[cmdk-list]") as HTMLElement
@@ -19,6 +21,10 @@ const CommandMenu = () => {
 
     function menuBack() {
         setPages((pages) => pages.slice(0, -1))
+    }
+
+    function openMenu(page: string) {
+        setPages([...pages, page])
     }
 
     return (
@@ -68,7 +74,7 @@ const CommandMenu = () => {
                             </Command.Item>
                         </Command.Group>
                         <Command.Group heading="Settings">
-                            <Command.Item onSelect={() => setPages([...pages, "proxy"])}>
+                            <Command.Item onSelect={() => openMenu("proxy")}>
                                 <IoMdSettings />
                                 Proxy
                             </Command.Item>
@@ -91,9 +97,11 @@ const CommandMenu = () => {
                     <>
                         <Command.Group heading="Proxy">
                             <Command.Item>
+                                <img src={ultravioletLogo} draggable={false} />
                                 Ultraviolet
                             </Command.Item>
                             <Command.Item>
+                                <img src={rammerheadLogo} draggable={false} />
                                 Rammerhead
                             </Command.Item>
                         </Command.Group>
