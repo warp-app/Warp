@@ -1,5 +1,5 @@
 # Todo
-- [x] - Fix UV
+- [ ] - Fix UV
 - [ ] - Clear recents
 - [ ] - Add font locally
 - [ ] - Logo

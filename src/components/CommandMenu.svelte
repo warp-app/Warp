@@ -7,15 +7,21 @@
 	import GearSix from "phosphor-svelte/lib/GearSix";
 	import Question from "phosphor-svelte/lib/Question";
 	import Check from "phosphor-svelte/lib/Check";
+	import Moon from "phosphor-svelte/lib/Moon";
+	import Sun from "phosphor-svelte/lib/Sun";
 	import ultravioletLogo from "../assets/ultravioletLogo.png";
 	import rammerheadLogo from "../assets/rammerheadLogo.png";
 	import { encodeURL } from "../util/encodeURL";
+
+	export let theme: string;
 
 	let open: boolean = false;
 	let pages: string[] = [];
 	let page: string | undefined = undefined;
 	let query: string = "";
-	let recent: string[] = JSON.parse(localStorage.getItem("@warp/recent")) || [];
+	let recent: string[] = JSON.parse(
+		localStorage.getItem("@warp/recent") || "[]"
+	);
 	let selected: string = "";
 	let service: string = localStorage.getItem("@warp/service") || "ultraviolet";
 
@@ -90,7 +96,17 @@
 	}
 
 	function openRecent(url: string) {
-		go(url);
+		let cmdkItem = window.document.querySelector(
+			`[data-cmdk-item][data-value="${url}"]`
+		) as HTMLElement;
+		go(cmdkItem.dataset.url || "");
+	}
+
+	function setTheme(e: Event) {
+		if (e.target) {
+			let target: HTMLInputElement = e.target as HTMLInputElement;
+			theme = `hsl(${360 - Number(target.value)}, 100%, 50%)`;
+		}
 	}
 </script>
 
@@ -138,8 +154,12 @@
 						Recently visited sites will appear here.
 					</Command.Item>
 				{/if}
-				{#each recent as item}
-					<Command.Item onSelect={openRecent}>
+				{#each recent as item, i}
+					<Command.Item
+						value={item + String(i)}
+						data-url={item}
+						onSelect={openRecent}
+					>
 						<Globe />
 						{item}
 					</Command.Item>
@@ -154,7 +174,7 @@
 					<GearSix />
 					Search Engine
 				</Command.Item>
-				<Command.Item>
+				<Command.Item onSelect={() => openMenu("theme")}>
 					<GearSix />
 					Theme
 				</Command.Item>
@@ -178,6 +198,28 @@
 					{#if service === "rammerhead"}
 						<Check />
 					{/if}
+				</Command.Item>
+			</Command.Group>
+		{:else if page === "theme"}
+			<Command.Group heading="Theme">
+				<Command.Item value="theme-slider">
+					<input
+						class="theme-slider"
+						type="range"
+						min={0}
+						max={360}
+						value={135}
+						on:input={setTheme}
+					/>
+				</Command.Item>
+				<Command.Item>
+					<Moon />
+					Dark
+					<Check />
+				</Command.Item>
+				<Command.Item>
+					<Sun />
+					Light
 				</Command.Item>
 			</Command.Group>
 		{/if}
