@@ -14,13 +14,30 @@
 
 	$: page = pages[pages.length - 1];
 
+	let selected: string = "";
+
+	$: if (!selected) {
+		setTimeout(() => {
+			selected =
+				window.document
+					.querySelector("[data-cmdk-item]")
+					?.getAttribute("data-value") || "";
+		});
+	}
+
+	function setSelected(value: string) {
+		selected = value;
+	}
+
 	function menuBack() {
 		const newPages = pages.slice(0, -1);
 		pages = newPages;
+		selected = "";
 	}
 
 	function openMenu(newPage: string) {
 		pages = [...pages, newPage];
+		selected = "";
 	}
 
 	function showMenu() {
@@ -44,6 +61,8 @@
 	shouldFilter={false}
 	label="Menu"
 	data-open={open ? "true" : "false"}
+	value={selected}
+	onValueChange={setSelected}
 >
 	<div
 		on:pointerdown={showMenu}
