@@ -15,11 +15,12 @@
 	let pages: string[] = [];
 	let page: string | undefined = undefined;
 	let query: string = "";
-	let recent: string[] = [];
+	let recent: string[] = JSON.parse(localStorage.getItem("@warp/recent")) || [];
 	let selected: string = "";
 	let service: string = localStorage.getItem("@warp/service") || "ultraviolet";
 
 	$: localStorage.setItem("@warp/service", service);
+	$: localStorage.setItem("@warp/recent", JSON.stringify(recent));
 
 	$: page = pages[pages.length - 1];
 
