@@ -1,13 +1,14 @@
 <script lang="ts">
-	import { registerSW } from "./util/registerSW";
-	import CommandMenu from "./components/CommandMenu.svelte";
+	import { Router, Route } from "svelte-routing";
+	import Home from "./routes/Home.svelte";
+	import Error from "./routes/Error.svelte";
+	import Head from "./components/Head.svelte";
 
-	(async () => {
-		await registerSW();
-	})();
+	export let url: string = "";
 </script>
 
-<main class="main">
-	<h1 class="title">Warp</h1>
-	<CommandMenu />
-</main>
+<Head />
+<Router {url}>
+	<Route path="/" component={Home}></Route>
+	<Route path="/*" component={Error}></Route>
+</Router>

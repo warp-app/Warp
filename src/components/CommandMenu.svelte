@@ -39,11 +39,6 @@
 	}
 </script>
 
-<svelte:head>
-	<link rel="preload" as="image" href={ultravioletLogo} />
-	<link rel="preload" as="image" href={rammerheadLogo} />
-</svelte:head>
-
 <Command.Root
 	onKeydown={keyDown}
 	shouldFilter={false}
