@@ -18,6 +18,7 @@
     "cmdk-sv": "^0.0.17",
     "phosphor-svelte": "^2.0.1",
     "rammerhead": "https://github.com/holy-unblocker/rammerhead/releases/download/v1.2.41-holy.5/rammerhead-1.2.41-holy.5.tgz",
+    "values.js": "^2.1.1",
     "vite-plugin-minify": "^1.5.2",
     "vite-plugin-static-copy": "^1.0.5",
     "wisp-server-node": "^1.1.0"

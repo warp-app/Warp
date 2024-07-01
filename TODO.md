@@ -11,6 +11,7 @@
 - [ ] - iframe viewer with back, forward, reload, and close.
 - [ ] - PWA
 - [ ] - Add Scramjet
+- [ ] - Make server
 
 # Ideas
 - [ ] - Games section Radon Games, 3kh0 quick links
