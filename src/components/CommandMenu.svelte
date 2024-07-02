@@ -14,6 +14,7 @@
 	import { encodeURL } from "../util/encodeURL";
 
 	export let theme: number;
+	export let themeMode: string;
 
 	let open: boolean = false;
 	let pages: string[] = [];
@@ -107,6 +108,10 @@
 			let target: HTMLInputElement = e.target as HTMLInputElement;
 			theme = 360 - Number(target.value);
 		}
+	}
+
+	function setThemeMode(mode: string) {
+		themeMode = mode;
 	}
 </script>
 
@@ -212,14 +217,19 @@
 						on:input={setTheme}
 					/>
 				</Command.Item>
-				<Command.Item>
+				<Command.Item onSelect={setThemeMode}>
 					<Moon />
 					Dark
-					<Check />
+					{#if themeMode === "dark"}
+						<Check />
+					{/if}
 				</Command.Item>
-				<Command.Item>
+				<Command.Item onSelect={setThemeMode}>
 					<Sun />
 					Light
+					{#if themeMode === "light"}
+						<Check />
+					{/if}
 				</Command.Item>
 			</Command.Group>
 		{/if}

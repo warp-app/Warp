@@ -3,10 +3,9 @@ import { svelte } from '@sveltejs/vite-plugin-svelte';
 import { ViteMinifyPlugin } from 'vite-plugin-minify';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 import { uvPath } from '@titaniumnetwork-dev/ultraviolet';
-//@ts-ignore
 import { epoxyPath } from '@mercuryworkshop/epoxy-transport';
 //@ts-ignore
-import { baremuxPath } from '@mercuryworkshop/bare-mux';
+import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
 import wisp from 'wisp-server-node';
 //@ts-ignore
 import createRammerhead from 'rammerhead/src/server/index.js';

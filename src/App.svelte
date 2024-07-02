@@ -8,15 +8,17 @@
 	export let url: string = "";
 
 	let theme: number = Number(localStorage.getItem("@warp/theme")) || 225;
+	let themeMode: string = localStorage.getItem("@warp/themeMode") || "dark";
 
 	$: localStorage.setItem("@warp/theme", String(theme));
+	$: localStorage.setItem("@warp/themeMode", themeMode);
 </script>
 
 <Head />
-<Theme bind:theme />
+<Theme bind:theme bind:themeMode />
 <Router {url}>
 	<Route path="/">
-		<Home bind:theme />
+		<Home bind:theme bind:themeMode />
 	</Route>
 	<Route path="/*" component={Error}></Route>
 </Router>

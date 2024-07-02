@@ -2,9 +2,10 @@
 	import CommandMenu from "../components/CommandMenu.svelte";
 
 	export let theme: number;
+	export let themeMode: string;
 </script>
 
 <main class="main">
 	<h1 class="title">Warp</h1>
-	<CommandMenu bind:theme />
+	<CommandMenu bind:theme bind:themeMode />
 </main>
