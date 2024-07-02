@@ -8,7 +8,7 @@
 - Minimalist design
 - Easy to use
 - Support for many popular sites
-- Customizable interface
+- Clean interface
 
 ## Setup
 
@@ -25,11 +25,11 @@ Run `npm run build` to build app for production into the `dist` folder.
 
 **Development**
 
-Run `npm run dev` to run the app in development mode. Rammerhead will not work in dev mode.
+Run `npm run dev` to run the app in development mode.
 
 ## Credits
 - [Nebelung](github.com/Nebelung-Dev) - Creator and developer
-- [cmdk](https://github.com/pacocoursey/cmdk) - Command menu
+- [paco - cmdk](https://github.com/pacocoursey/cmdk) - Command menu
 
 ## License
 Warp uses the MIT license.

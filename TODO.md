@@ -4,7 +4,7 @@
 - [ ] - Add font locally
 - [ ] - Logo
 - [ ] - Search engines
-- [ ] - Themes (Dark, Light and a slider)
+- [x] - Themes (Dark, Light and a slider)
 - [ ] - Tab mask
 - [ ] - Privacy Policy
 - [ ] - Footer with GitHub, Discord, and Privacy Policy
