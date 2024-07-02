@@ -1,16 +1,31 @@
 <script lang="ts">
-    import Values from 'values.js'
+  import { hsvToHsl } from "../util/hsvToHsl";
 
-    export let theme: string;
+  export let theme: number;
 
-    let color: any;
-    let colors: string[];
-    $: color = new Values(theme);
-    $: colors = color.tints(16).reverse().concat(color.shades(16)).map((i: any) => `rgb(${i.rgb})`).reverse();
+  interface ColorSchemeTypes {
+    gray1: string
+    gray2: string
+    gray4: string
+    gray6: string
+    gray8: string
+    gray9: string
+    gray11: string
+    gray12: string
+  }
 
-    let themeCSS: string;
+  let colorScheme: ColorSchemeTypes | any = {};
+  $: colorScheme.gray1 = hsvToHsl(theme, 28, 9)
+  $: colorScheme.gray2 = hsvToHsl(theme, 21, 11)
+  $: colorScheme.gray4 = hsvToHsl(theme, 21, 16)
+  $: colorScheme.gray6 = hsvToHsl(theme, 14, 20)
+  $: colorScheme.gray8 = hsvToHsl(theme, 14, 31)
+  $: colorScheme.gray9 = hsvToHsl(theme, 14, 44)
+  $: colorScheme.gray11 = hsvToHsl(theme, 7, 63)
+  $: colorScheme.gray12 = hsvToHsl(theme, 7, 93)
 
-    $: themeCSS = `body {--gray1: ${colors[0]}; --gray2: ${colors[1]}; --gray4: ${colors[3]}; --gray6: ${colors[5]}; --gray8: ${colors[7]}; --gray9: ${colors[8]}; --gray11: ${colors[10]}; --gray12: ${colors[11]}; --shadow: rgba(0, 0, 0, 0.2); --font: "Inter";}`
+  let themeCSS: string;
+  $: themeCSS = `body {--gray1: ${colorScheme.gray1}; --gray2: ${colorScheme.gray2}; --gray4: ${colorScheme.gray4}; --gray6: ${colorScheme.gray6}; --gray8: ${colorScheme.gray8}; --gray9: ${colorScheme.gray9}; --gray11: ${colorScheme.gray11}; --gray12: ${colorScheme.gray12}; --shadow: rgba(0, 0, 0, 0.2); --font: "Inter";}`
 </script>
 
 <svelte:head>

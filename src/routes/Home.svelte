@@ -1,7 +1,7 @@
 <script lang="ts">
 	import CommandMenu from "../components/CommandMenu.svelte";
 
-	export let theme: string;
+	export let theme: number;
 </script>
 
 <main class="main">

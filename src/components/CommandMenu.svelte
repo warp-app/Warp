@@ -13,7 +13,7 @@
 	import rammerheadLogo from "../assets/rammerheadLogo.png";
 	import { encodeURL } from "../util/encodeURL";
 
-	export let theme: string;
+	export let theme: number;
 
 	let open: boolean = false;
 	let pages: string[] = [];
@@ -105,7 +105,7 @@
 	function setTheme(e: Event) {
 		if (e.target) {
 			let target: HTMLInputElement = e.target as HTMLInputElement;
-			theme = `hsl(${360 - Number(target.value)}, 100%, 50%)`;
+			theme = 360 - Number(target.value);
 		}
 	}
 </script>

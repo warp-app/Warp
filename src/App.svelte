@@ -7,9 +7,9 @@
 
 	export let url: string = "";
 
-	let theme: string = localStorage.getItem("@warp/theme") || "hsl(225, 100%, 50%)";
+	let theme: number = Number(localStorage.getItem("@warp/theme")) || 225;
 
-	$: localStorage.setItem("@warp/theme", theme);
+	$: localStorage.setItem("@warp/theme", String(theme));
 </script>
 
 <Head />
