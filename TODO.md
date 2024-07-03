@@ -1,16 +1,13 @@
 # Todo
-- [x] - Fix UV
 - [ ] - Clear recents
 - [ ] - Add font locally
 - [ ] - Logo
 - [ ] - Search engines
-- [x] - Themes (Dark, Light and a slider)
 - [ ] - Tab mask
 - [ ] - Privacy Policy
 - [ ] - Footer with GitHub, Discord, and Privacy Policy
 - [ ] - iframe viewer with back, forward, reload, and close.
 - [ ] - PWA
-- [x] - Add Scramjet
 - [ ] - Make server
 
 # Ideas
