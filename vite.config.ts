@@ -3,12 +3,14 @@ import { svelte } from '@sveltejs/vite-plugin-svelte';
 import { ViteMinifyPlugin } from 'vite-plugin-minify';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 import { uvPath } from '@titaniumnetwork-dev/ultraviolet';
+//@ts-ignore
 import { epoxyPath } from '@mercuryworkshop/epoxy-transport';
 //@ts-ignore
 import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
 import wisp from 'wisp-server-node';
 //@ts-ignore
 import createRammerhead from 'rammerhead/src/server/index.js';
+import { scramjetPath } from "@mercuryworkshop/scramjet";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -101,6 +103,11 @@ export default defineConfig({
         {
           src: `${baremuxPath}/**/*`.replace(/\\/g, '/'),
           dest: 'baremux',
+          overwrite: false
+        },
+        {
+          src: `${scramjetPath}/**/*`.replace(/\\/g, '/'),
+          dest: 'scramjet',
           overwrite: false
         }
       ]

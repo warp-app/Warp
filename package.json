@@ -13,6 +13,7 @@
   "dependencies": {
     "@mercuryworkshop/bare-mux": "^1.1.2",
     "@mercuryworkshop/epoxy-transport": "^2.0.1",
+    "@mercuryworkshop/scramjet": "^1.0.2",
     "@titaniumnetwork-dev/ultraviolet": "^3.1.2",
     "cmdk": "^1.0.0",
     "cmdk-sv": "^0.0.17",

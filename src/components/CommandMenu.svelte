@@ -11,6 +11,7 @@
 	import Sun from "phosphor-svelte/lib/Sun";
 	import ultravioletLogo from "../assets/ultravioletLogo.png";
 	import rammerheadLogo from "../assets/rammerheadLogo.png";
+	import scramjetLogo from "../assets/scramjetLogo.png";
 	import { encodeURL } from "../util/encodeURL";
 
 	export let theme: number;
@@ -201,6 +202,13 @@
 					<img src={rammerheadLogo} draggable={false} alt="Rammerhead" />
 					Rammerhead
 					{#if service === "rammerhead"}
+						<Check />
+					{/if}
+				</Command.Item>
+				<Command.Item onSelect={setService}>
+					<img src={scramjetLogo} draggable={false} alt="Scramjet" />
+					Scramjet
+					{#if service === "scramjet"}
 						<Check />
 					{/if}
 				</Command.Item>

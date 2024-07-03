@@ -10,7 +10,7 @@ declare global {
 
 async function registerSW(): Promise<void> {
     if ('serviceWorker' in navigator) {
-        await navigator.serviceWorker.register("uv/sw.js")
+        await navigator.serviceWorker.register("/sw.js")
 
         await window.BareMux.SetTransport("EpxMod.EpoxyClient", { wisp: wispURL })
     }

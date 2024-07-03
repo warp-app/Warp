@@ -2,6 +2,7 @@
 	import { registerSW } from "../util/registerSW";
 	import ultravioletLogo from "../assets/ultravioletLogo.png";
 	import rammerheadLogo from "../assets/rammerheadLogo.png";
+	import scramjetLogo from "../assets/scramjetLogo.png";
 
 	async function loadScript(src: string) {
 		await new Promise<void>((resolve, reject) => {
@@ -22,6 +23,8 @@
 		await loadScript("/epoxy/index.js");
 		await loadScript("/uv/uv.bundle.js");
 		await loadScript("/uv/uv.config.js");
+		await loadScript("/scramjet/scramjet.codecs.js");
+		await loadScript("/scramjet/scramjet.config.js");
 		await registerSW();
 	})();
 </script>
@@ -29,4 +32,5 @@
 <svelte:head>
 	<link rel="preload" as="image" href={ultravioletLogo} />
 	<link rel="preload" as="image" href={rammerheadLogo} />
+	<link rel="preload" as="image" href={scramjetLogo} />
 </svelte:head>

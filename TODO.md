@@ -10,7 +10,7 @@
 - [ ] - Footer with GitHub, Discord, and Privacy Policy
 - [ ] - iframe viewer with back, forward, reload, and close.
 - [ ] - PWA
-- [ ] - Add Scramjet
+- [x] - Add Scramjet
 - [ ] - Make server
 
 # Ideas
