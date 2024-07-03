@@ -52,13 +52,17 @@
 			if (evaluated instanceof Function) {
 				mathResult = "";
 			} else {
-				evaluated = String(evaluated);
-				if (evaluated) {
-					if (query !== evaluated) {
-						mathResult = evaluated;
-					}
-				} else {
+				if (isNaN(evaluated)) {
 					mathResult = "";
+				} else {
+					evaluated = String(evaluated);
+					if (evaluated) {
+						if (query !== evaluated) {
+							mathResult = evaluated;
+						}
+					} else {
+						mathResult = "";
+					}
 				}
 			}
 		} catch {
