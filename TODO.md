@@ -1,6 +1,5 @@
 # Todo
 - [ ] - Clear recents
-- [ ] - Add font locally
 - [ ] - Logo
 - [ ] - Search engines
 - [ ] - Tab mask
