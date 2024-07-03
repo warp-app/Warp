@@ -257,7 +257,7 @@
 						type="range"
 						min={0}
 						max={360}
-						value={135}
+						value={360 - theme}
 						on:input={setTheme}
 					/>
 				</Command.Item>

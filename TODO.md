@@ -9,10 +9,4 @@
 - [ ] - iframe viewer with back, forward, reload, and close.
 - [ ] - PWA
 - [ ] - Make server
-
-# Ideas
-- [ ] - Games section Radon Games, 3kh0 quick links
-- [ ] - Suggestions section
-- [ ] - Home button at top
-- [ ] - Keep in open state
-- [ ] - about:blank button
+- [ ] - Auto button at top to either search or go to url
