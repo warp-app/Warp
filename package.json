@@ -17,6 +17,7 @@
     "@titaniumnetwork-dev/ultraviolet": "^3.1.5",
     "cmdk": "^1.0.0",
     "cmdk-sv": "^0.0.17",
+    "mathjs": "^13.0.1",
     "phosphor-svelte": "^2.0.1",
     "rammerhead": "https://github.com/holy-unblocker/rammerhead/releases/download/v1.2.41-holy.5/rammerhead-1.2.41-holy.5.tgz",
     "vite-plugin-minify": "^1.5.2",

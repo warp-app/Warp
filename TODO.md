@@ -15,5 +15,4 @@
 - [ ] - Suggestions section
 - [ ] - Home button at top
 - [ ] - Keep in open state
-- [ ] - Quick math at top
 - [ ] - about:blank button

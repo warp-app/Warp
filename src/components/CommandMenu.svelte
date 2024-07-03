@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { Command } from "cmdk-sv";
+	//@ts-ignore
+	import { evaluate } from "mathjs";
 	import MagnifyingGlass from "phosphor-svelte/lib/MagnifyingGlass";
 	import CaretLeft from "phosphor-svelte/lib/CaretLeft";
 	import ArrowSquareOut from "phosphor-svelte/lib/ArrowSquareOut";
@@ -9,6 +11,7 @@
 	import Check from "phosphor-svelte/lib/Check";
 	import Moon from "phosphor-svelte/lib/Moon";
 	import Sun from "phosphor-svelte/lib/Sun";
+	import Calculator from "phosphor-svelte/lib/Calculator";
 	import ultravioletLogo from "../assets/ultravioletLogo.png";
 	import rammerheadLogo from "../assets/rammerheadLogo.png";
 	import scramjetLogo from "../assets/scramjetLogo.png";
@@ -21,6 +24,7 @@
 	let pages: string[] = [];
 	let page: string | undefined = undefined;
 	let query: string = "";
+	let mathResult: string = "";
 	let recent: string[] = JSON.parse(
 		localStorage.getItem("@warp/recent") || "[]"
 	);
@@ -39,6 +43,29 @@
 					.querySelector("[data-cmdk-item]")
 					?.getAttribute("data-value") || "";
 		});
+	}
+
+	$: if (query) {
+		try {
+			let evaluated = evaluate(query);
+
+			if (evaluated instanceof Function) {
+				mathResult = "";
+			} else {
+				evaluated = String(evaluated);
+				if (evaluated) {
+					if (query !== evaluated) {
+						mathResult = evaluated;
+					}
+				} else {
+					mathResult = "";
+				}
+			}
+		} catch {
+			mathResult = "";
+		}
+	} else {
+		mathResult = "";
 	}
 
 	function setSelected(value: string) {
@@ -141,6 +168,15 @@
 	</div>
 	<Command.List>
 		<Command.Empty>No results found.</Command.Empty>
+
+		{#if mathResult}
+			<Command.Group heading="Math">
+				<Command.Item>
+					<Calculator />
+					{mathResult}
+				</Command.Item>
+			</Command.Group>
+		{/if}
 
 		{#if !page}
 			<Command.Group heading="Actions">
