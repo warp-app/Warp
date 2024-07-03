@@ -11,26 +11,26 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@mercuryworkshop/bare-mux": "^1.1.2",
-    "@mercuryworkshop/epoxy-transport": "^2.0.1",
+    "@mercuryworkshop/bare-mux": "^1.1.4",
+    "@mercuryworkshop/epoxy-transport": "^2.0.4",
     "@mercuryworkshop/scramjet": "^1.0.2",
-    "@titaniumnetwork-dev/ultraviolet": "^3.1.2",
+    "@titaniumnetwork-dev/ultraviolet": "^3.1.5",
     "cmdk": "^1.0.0",
     "cmdk-sv": "^0.0.17",
     "phosphor-svelte": "^2.0.1",
     "rammerhead": "https://github.com/holy-unblocker/rammerhead/releases/download/v1.2.41-holy.5/rammerhead-1.2.41-holy.5.tgz",
     "vite-plugin-minify": "^1.5.2",
-    "vite-plugin-static-copy": "^1.0.5",
+    "vite-plugin-static-copy": "^1.0.6",
     "wisp-server-node": "^1.1.0"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^3.1.1",
     "@tsconfig/svelte": "^5.0.4",
     "svelte": "^4.2.18",
-    "svelte-check": "^3.8.1",
+    "svelte-check": "^3.8.4",
     "svelte-routing": "^2.13.0",
     "tslib": "^2.6.3",
-    "typescript": "^5.2.2",
-    "vite": "^5.3.1"
+    "typescript": "^5.5.3",
+    "vite": "^5.3.3"
   }
 }
