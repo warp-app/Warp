@@ -6,10 +6,10 @@
 
 ## Features
 
-- Minimalist design
-- Easy to use
-- Support for many popular sites
-- Clean interface
+-   Minimalist design
+-   Easy to use
+-   Support for many popular sites
+-   Clean interface
 
 ## Setup
 
@@ -30,8 +30,8 @@ Run `npm run dev` to run the app in development mode.
 
 ## Credits
 
-- [Nebelung](github.com/Nebelung-Dev) - Creator and developer
-- [paco - cmdk](https://github.com/pacocoursey/cmdk) - Command menu
+-   [Nebelung](github.com/Nebelung-Dev) - Creator and developer
+-   [paco/cmdk](https://github.com/pacocoursey/cmdk) - Command menu
 
 ## License
 

@@ -11,14 +11,14 @@ const uv = new UVServiceWorker();
 const scramjet = new ScramjetServiceWorker();
 
 self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    (async () => {
-      if (uv.route(event)) {
-        return await uv.fetch(event);
-      } else if (scramjet.route(event)) {
-        return await scramjet.fetch(event);
-      }
-      return await fetch(event.request);
-    })(),
-  );
+	event.respondWith(
+		(async () => {
+			if (uv.route(event)) {
+				return await uv.fetch(event);
+			} else if (scramjet.route(event)) {
+				return await scramjet.fetch(event);
+			}
+			return await fetch(event.request);
+		})(),
+	);
 });

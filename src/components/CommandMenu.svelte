@@ -26,10 +26,11 @@
 	let query: string = "";
 	let mathResult: string = "";
 	let recent: string[] = JSON.parse(
-		localStorage.getItem("@warp/recent") || "[]"
+		localStorage.getItem("@warp/recent") || "[]",
 	);
 	let selected: string = "";
-	let service: string = localStorage.getItem("@warp/service") || "ultraviolet";
+	let service: string =
+		localStorage.getItem("@warp/service") || "ultraviolet";
 
 	$: localStorage.setItem("@warp/service", service);
 	$: localStorage.setItem("@warp/recent", JSON.stringify(recent));
@@ -130,7 +131,7 @@
 
 	function openRecent(url: string) {
 		let cmdkItem = window.document.querySelector(
-			`[data-cmdk-item][data-value="${url}"]`
+			`[data-cmdk-item][data-value="${url}"]`,
 		) as HTMLElement;
 		go(cmdkItem.dataset.url || "");
 	}
@@ -232,14 +233,22 @@
 		{:else if page === "proxy"}
 			<Command.Group heading="Proxy">
 				<Command.Item onSelect={setService}>
-					<img src={ultravioletLogo} draggable={false} alt="Ultraviolet" />
+					<img
+						src={ultravioletLogo}
+						draggable={false}
+						alt="Ultraviolet"
+					/>
 					Ultraviolet
 					{#if service === "ultraviolet"}
 						<Check />
 					{/if}
 				</Command.Item>
 				<Command.Item onSelect={setService}>
-					<img src={rammerheadLogo} draggable={false} alt="Rammerhead" />
+					<img
+						src={rammerheadLogo}
+						draggable={false}
+						alt="Rammerhead"
+					/>
 					Rammerhead
 					{#if service === "rammerhead"}
 						<Check />
