@@ -10,7 +10,8 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"format": "npx prettier . --write",
-		"update": "npx npm-check-updates -u && npm i"
+		"update": "npx npm-check-updates -u && npm i",
+        "revert": "git reset HEAD --hard && git clean -fd"
 	},
 	"dependencies": {
 		"@mercuryworkshop/bare-mux": "^1.1.4",

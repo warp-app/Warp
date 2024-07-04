@@ -34,7 +34,11 @@ Run `npm run format` to format the project with Prettier.
 
 **Updating Dependencies**
 
-Run `npm run update` to update every dependency. Note: this my cause Warp to break.
+Run `npm run update` to update every dependency. Note that this my cause Warp to break.
+
+**Revert Changes**
+
+Run `npm run revert` revert the project back to the last commit.
 
 ## Credits
 
