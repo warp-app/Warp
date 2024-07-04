@@ -1,37 +1,42 @@
 {
-  "name": "warp",
-  "version": "0.0.1",
-  "description": "A minimalist web proxy built to be simple yet powerful.",
-  "author": "Nebelung",
-  "license": "MIT",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@mercuryworkshop/bare-mux": "^1.1.4",
-    "@mercuryworkshop/epoxy-transport": "^2.0.4",
-    "@mercuryworkshop/scramjet": "^1.0.2",
-    "@titaniumnetwork-dev/ultraviolet": "^3.1.5",
-    "cmdk": "^1.0.0",
-    "cmdk-sv": "^0.0.17",
-    "mathjs": "^13.0.1",
-    "phosphor-svelte": "^2.0.1",
-    "rammerhead": "https://github.com/holy-unblocker/rammerhead/releases/download/v1.2.41-holy.5/rammerhead-1.2.41-holy.5.tgz",
-    "vite-plugin-minify": "^1.5.2",
-    "vite-plugin-static-copy": "^1.0.6",
-    "wisp-server-node": "^1.1.0"
-  },
-  "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^3.1.1",
-    "@tsconfig/svelte": "^5.0.4",
-    "svelte": "^4.2.18",
-    "svelte-check": "^3.8.4",
-    "svelte-routing": "^2.13.0",
-    "tslib": "^2.6.3",
-    "typescript": "^5.5.3",
-    "vite": "^5.3.3"
-  }
+	"name": "warp",
+	"version": "0.0.1",
+	"description": "A minimalist web proxy built to be simple yet powerful.",
+	"author": "Nebelung",
+	"license": "MIT",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview",
+		"format": "npx prettier . --write",
+		"update": "npx npm-check-updates -u && npm i"
+	},
+	"dependencies": {
+		"@mercuryworkshop/bare-mux": "^1.1.4",
+		"@mercuryworkshop/epoxy-transport": "^2.0.4",
+		"@mercuryworkshop/scramjet": "^1.0.2",
+		"@titaniumnetwork-dev/ultraviolet": "^3.1.5",
+		"cmdk": "^1.0.0",
+		"cmdk-sv": "^0.0.17",
+		"mathjs": "^13.0.1",
+		"phosphor-svelte": "^2.0.1",
+		"rammerhead": "https://github.com/holy-unblocker/rammerhead/releases/download/v1.2.41-holy.5/rammerhead-1.2.41-holy.5.tgz",
+		"vite-plugin-minify": "^1.5.2",
+		"vite-plugin-static-copy": "^1.0.6",
+		"wisp-server-node": "^1.1.0"
+	},
+	"devDependencies": {
+		"@sveltejs/vite-plugin-svelte": "^3.1.1",
+		"@trivago/prettier-plugin-sort-imports": "^4.3.0",
+		"@tsconfig/svelte": "^5.0.4",
+		"prettier": "^3.3.2",
+		"prettier-plugin-svelte": "^3.2.5",
+		"svelte": "^4.2.18",
+		"svelte-check": "^3.8.4",
+		"svelte-routing": "^2.13.0",
+		"tslib": "^2.6.3",
+		"typescript": "^5.5.3",
+		"vite": "^5.3.3"
+	}
 }

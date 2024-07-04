@@ -1,15 +1,15 @@
-import { defineConfig, ViteDevServer } from 'vite';
-import { svelte } from '@sveltejs/vite-plugin-svelte';
-import { ViteMinifyPlugin } from 'vite-plugin-minify';
-import { viteStaticCopy } from 'vite-plugin-static-copy';
-import { uvPath } from '@titaniumnetwork-dev/ultraviolet';
+import { defineConfig, ViteDevServer } from "vite";
+import { svelte } from "@sveltejs/vite-plugin-svelte";
+import { ViteMinifyPlugin } from "vite-plugin-minify";
+import { viteStaticCopy } from "vite-plugin-static-copy";
+import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
 //@ts-ignore
-import { epoxyPath } from '@mercuryworkshop/epoxy-transport';
+import { epoxyPath } from "@mercuryworkshop/epoxy-transport";
 //@ts-ignore
 import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
-import wisp from 'wisp-server-node';
+import wisp from "wisp-server-node";
 //@ts-ignore
-import createRammerhead from 'rammerhead/src/server/index.js';
+import createRammerhead from "rammerhead/src/server/index.js";
 import { scramjetPath } from "@mercuryworkshop/scramjet";
 
 // https://vitejs.dev/config/
@@ -37,38 +37,36 @@ export default defineConfig({
             "/editsession",
             "/needpassword",
             "/syncLocalStorage",
-            "/api/shuffleDict"
+            "/api/shuffleDict",
           ];
 
           const rammerheadSession = /^\/[a-z0-9]{32}/;
 
           const shouldRouteRh = (req: any) => {
-            const url = new URL(req.url, 'http://0.0.0.0');
+            const url = new URL(req.url, "http://0.0.0.0");
             return (
               rammerheadScopes.includes(url.pathname) ||
               rammerheadSession.test(url.pathname)
             );
-          }
+          };
 
           const routeRhRequest = (req: any, res: any) => {
             rh.emit("request", req, res);
-          }
+          };
 
           const routeRhUpgrade = (req: any, socket: any, head: any) => {
             rh.emit("upgrade", req, socket, head);
-          }
+          };
 
           server.middlewares.use((req, res, next) => {
             if (shouldRouteRh(req)) {
               routeRhRequest(req, res);
             } else {
-              next()
-            };
+              next();
+            }
           });
 
-          const upgraders = server.httpServer.listeners(
-            "upgrade"
-          ) as any;
+          const upgraders = server.httpServer.listeners("upgrade") as any;
 
           for (const upgrader of upgraders) {
             server.httpServer.off("upgrade", upgrader);
@@ -91,26 +89,26 @@ export default defineConfig({
     viteStaticCopy({
       targets: [
         {
-          src: `${uvPath}/**/*`.replace(/\\/g, '/'),
-          dest: 'uv',
-          overwrite: false
+          src: `${uvPath}/**/*`.replace(/\\/g, "/"),
+          dest: "uv",
+          overwrite: false,
         },
         {
-          src: `${epoxyPath}/**/*`.replace(/\\/g, '/'),
-          dest: 'epoxy',
-          overwrite: false
+          src: `${epoxyPath}/**/*`.replace(/\\/g, "/"),
+          dest: "epoxy",
+          overwrite: false,
         },
         {
-          src: `${baremuxPath}/**/*`.replace(/\\/g, '/'),
-          dest: 'baremux',
-          overwrite: false
+          src: `${baremuxPath}/**/*`.replace(/\\/g, "/"),
+          dest: "baremux",
+          overwrite: false,
         },
         {
-          src: `${scramjetPath}/**/*`.replace(/\\/g, '/'),
-          dest: 'scramjet',
-          overwrite: false
-        }
-      ]
-    })
-  ]
+          src: `${scramjetPath}/**/*`.replace(/\\/g, "/"),
+          dest: "scramjet",
+          overwrite: false,
+        },
+      ],
+    }),
+  ],
 });

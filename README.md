@@ -5,6 +5,7 @@
 </div>
 
 ## Features
+
 - Minimalist design
 - Easy to use
 - Support for many popular sites
@@ -28,8 +29,10 @@ Run `npm run build` to build app for production into the `dist` folder.
 Run `npm run dev` to run the app in development mode.
 
 ## Credits
+
 - [Nebelung](github.com/Nebelung-Dev) - Creator and developer
 - [paco - cmdk](https://github.com/pacocoursey/cmdk) - Command menu
 
 ## License
+
 Warp uses the MIT license.
