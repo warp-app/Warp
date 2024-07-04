@@ -8,6 +8,7 @@
 	"bracketSpacing": true,
 	"bracketSameLine": false,
 	"arrowParens": "always",
+	"importOrder": ["<THIRD_PARTY_MODULES>", "^[./]"],
 	"plugins": [
 		"prettier-plugin-svelte",
 		"@trivago/prettier-plugin-sort-imports"

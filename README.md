@@ -28,6 +28,14 @@ Run `npm run build` to build app for production into the `dist` folder.
 
 Run `npm run dev` to run the app in development mode.
 
+**Formatting**
+
+Run `npm run format` to format the project with Prettier.
+
+**Updating Dependencies**
+
+Run `npm run update` to update every dependency. Note: this my cause Warp to break.
+
 ## Credits
 
 -   [Nebelung](github.com/Nebelung-Dev) - Creator and developer
