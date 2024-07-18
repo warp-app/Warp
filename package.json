@@ -6,26 +6,20 @@
 	"license": "MIT",
 	"type": "module",
 	"scripts": {
-		"dev": "vite",
+        "start": "node index.js",
+		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
 		"format": "npx prettier . --write",
 		"update": "npx npm-check-updates -u && npm i",
-        "revert": "git reset HEAD --hard && git clean -fd"
+		"revert": "git reset HEAD --hard && git clean -fd"
 	},
 	"dependencies": {
-		"@mercuryworkshop/bare-mux": "^1.1.4",
-		"@mercuryworkshop/epoxy-transport": "^2.0.5",
-		"@mercuryworkshop/scramjet": "^1.0.2",
-		"@titaniumnetwork-dev/ultraviolet": "^3.1.5",
-		"cmdk": "^1.0.0",
+		"chemicaljs": "^1.4.9",
 		"cmdk-sv": "^0.0.17",
 		"mathjs": "^13.0.1",
 		"phosphor-svelte": "^2.0.1",
-		"rammerhead": "https://github.com/holy-unblocker/rammerhead/releases/download/v1.2.41-holy.5/rammerhead-1.2.41-holy.5.tgz",
-		"vite-plugin-minify": "^1.5.2",
-		"vite-plugin-static-copy": "^1.0.6",
-		"wisp-server-node": "^1.1.0"
+		"vite-plugin-minify": "^1.5.2"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.6.0",

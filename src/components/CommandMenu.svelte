@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { Command } from "cmdk-sv";
-	//@ts-ignore
 	import { evaluate } from "mathjs";
 	import MagnifyingGlass from "phosphor-svelte/lib/MagnifyingGlass";
 	import CaretLeft from "phosphor-svelte/lib/CaretLeft";
@@ -15,7 +14,6 @@
 	import ultravioletLogo from "../assets/ultravioletLogo.png";
 	import rammerheadLogo from "../assets/rammerheadLogo.png";
 	import scramjetLogo from "../assets/scramjetLogo.png";
-	import { encodeURL } from "../util/encodeURL";
 
 	export let theme: number;
 	export let themeMode: string;
@@ -29,8 +27,7 @@
 		localStorage.getItem("@warp/recent") || "[]",
 	);
 	let selected: string = "";
-	let service: string =
-		localStorage.getItem("@warp/service") || "ultraviolet";
+	let service: string = localStorage.getItem("@warp/service") || "uv";
 
 	$: localStorage.setItem("@warp/service", service);
 	$: localStorage.setItem("@warp/recent", JSON.stringify(recent));
@@ -108,13 +105,15 @@
 	}
 
 	async function go(url: string) {
-		let encodedURL = await encodeURL(service, url);
-		window.open(encodedURL);
-		if (recent[0] !== url) {
-			recent.unshift(url);
+		if ((window as any).chemicalLoaded) {
+			let encodedURL = await (window as any).chemicalEncode(url, service);
+			window.open(encodedURL);
+			if (recent[0] !== url) {
+				recent.unshift(url);
+			}
+			recent = recent.slice(0, 3);
+			query = "";
 		}
-		recent = recent.slice(0, 3);
-		query = "";
 	}
 
 	function openURL() {
@@ -238,8 +237,8 @@
 						draggable={false}
 						alt="Ultraviolet"
 					/>
-					Ultraviolet
-					{#if service === "ultraviolet"}
+					UV
+					{#if service === "uv"}
 						<Check />
 					{/if}
 				</Command.Item>
