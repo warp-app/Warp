@@ -10,6 +10,10 @@
 -   Easy to use
 -   Support for many popular sites
 -   Clean interface
+-   Built in calculator
+
+## Preview
+<img width="2976" height="1676" alt="2025-09-26_14-33-38" src="https://github.com/user-attachments/assets/137bab6a-7287-437f-a2f4-b11c1d32e62b" />
 
 ## Setup
 
