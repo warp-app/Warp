@@ -1,7 +1,7 @@
 <div align="center">
     <img height="150px" src="https://avatars.githubusercontent.com/u/174144477">
-    <h1>Warp</h1>
-    <h3>A minimalist web proxy built to be simple yet powerful. Submission for the 2024 Proxathon.</h3>
+    <h1>Warp [Unfinished]</h1>
+    <h3>A minimalist web proxy built to be simple yet powerful. Originally a submission for the 2024 Proxathon.</h3>
 </div>
 
 ## Features
